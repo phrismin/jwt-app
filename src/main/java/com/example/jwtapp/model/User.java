@@ -29,5 +29,5 @@ public class User extends BaseEntity {
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
-    private List<User> roles;
+    private List<Role> roles;
 }

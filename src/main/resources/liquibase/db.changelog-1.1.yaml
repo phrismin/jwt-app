@@ -1,0 +1,29 @@
+databaseChangeLog:
+  -  property:
+       dbms:  oracle,postgresql
+       name:  clob.type
+       value:  clob
+  -  property:
+       dbms:  mysql,mariadb
+       name:  clob.type
+       value:  longtext
+  -  property:
+       name:  table.name
+       value:  tableA
+  -  changeSet:
+       id:  1
+       author:  joe
+       dbms: mariadb
+       changes:
+         -  createTable:
+              tableName:  ${table.name}
+              columns:
+                -  column:
+                     name:  id
+                     type:  int
+                -  column:
+                     name:  Column1
+                     type:  ${clob.type}
+                -  column:
+                     name:  Column2
+                     type:  int
